@@ -23,12 +23,12 @@ create table homicidios (
   genero varchar not null,
   edad float not null,
   grupo_edad varchar not null,
-  numero_homicidio int not null,
+  numero_homicidios int not null,
 
   primary key (id),
   foreign key (id_municipio) references municipio (id),
   check (genero in ('MASCULINO', 'FEMENINO')),
-  check (grupo_edad in ('ADULTOS','ADOLECENTES','MENORES')),
+  check (grupo_edad in ('ADULTOS','ADOLESCENTES','MENORES')),
   check (edad >= 0)
 );
 
@@ -46,7 +46,7 @@ insert into departamento values
 
 insert into municipio values 
   (13458,13,'Montecristo'),
-  (86571,86,'Puerto Gurzman'),
+  (86571,86,'Puerto Guzman'),
   (25438,25,'Medina'),
   (50006,50,'Acacias'),
   (54001,54,'Cucuta'),
@@ -56,13 +56,13 @@ insert into municipio values
   (66594,66,'Quinchia');
 
 insert into homicidios values
-  (0, 13458, '2023-11-20', 'MASCULINO', 54.0, 'ADULTOS', 1),
+  (0, 13458, '2013-11-20', 'MASCULINO', 54.0, 'ADULTOS', 1),
   (1, 86571, '2003-04-01', 'MASCULINO', 39.0, 'ADULTOS', 1),
   (2, 25438, '2007-05-06', 'MASCULINO', 39.0, 'ADULTOS', 1),
   (3, 50006, '2004-04-03', 'MASCULINO', 24.0, 'ADULTOS', 1),
   (4, 54001, '2016-08-07', 'MASCULINO', 28.0, 'ADULTOS', 1),
   (5, 17380, '2006-08-23', 'MASCULINO', 29.0, 'ADULTOS', 1),
-  (6, 86865, '2016-07-24', 'MASCULINO', 17.0, 'ADOLECENTES', 2),
+  (6, 86865, '2016-07-24', 'MASCULINO', 17.0, 'ADOLESCENTES', 2),
   (7, 54001, '2011-04-15', 'MASCULINO', 66.0, 'ADULTOS', 1),
   (8, 76834, '2012-06-02', 'MASCULINO', 34.0, 'ADULTOS', 1),
   (9, 66594, '2009-08-12', 'MASCULINO', 36.0, 'ADULTOS', 1);
@@ -74,13 +74,13 @@ Select nombre from departamento;
 
 Select nombre from municipio;
 
-select id_municipio, numero_homicidio from homicidios;
+select id_municipio, numero_homicidios from homicidios;
 
 select * from municipio
 where id_departamento = 86;
 
-select count(*) from homicidios
-where grupo_edad = 'ADOLECENTES';
+select sum(numero_homicidios) from homicidios
+where grupo_edad = 'ADOLESCENTES';
 
 select id,nombre from municipio
   where id= 13458 or id= 25438;
@@ -92,6 +92,7 @@ select * from homicidios
   where fecha between '2009-01-01' and '2016-12-31';
 
 -- Actualizacion 
+
 
 
 -- Eliminacion 
