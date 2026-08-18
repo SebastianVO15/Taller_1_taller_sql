@@ -82,7 +82,14 @@ where id_departamento = 86;
 select count(*) from homicidios
 where grupo_edad = 'ADOLECENTES';
 
-select 
+select id,nombre from municipio
+  where id= 13458 or id= 25438;
+
+select * from homicidios
+  where id_municipio = 17380;
+
+select * from homicidios
+  where fecha between '2009-01-01' and '2016-12-31';
 
 -- Actualizacion 
 
