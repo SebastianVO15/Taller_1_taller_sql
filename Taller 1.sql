@@ -35,7 +35,7 @@ create table homicidios (
 -- Poblacion de las tablas
 
 insert into departamento values
-  (13,'Bolivar'),
+  (13,'Bolívar'),
   (86,'Putumayo'),
   (25,'Cundinamarca'),
   (50,'Meta'),
@@ -46,14 +46,14 @@ insert into departamento values
 
 insert into municipio values 
   (13458,13,'Montecristo'),
-  (86571,86,'Puerto Guzman'),
+  (86571,86,'Puerto Guzmán'),
   (25438,25,'Medina'),
-  (50006,50,'Acacias'),
-  (54001,54,'Cucuta'),
+  (50006,50,'Acacías'),
+  (54001,54,'Cúcuta'),
   (17380,17,'La Dorada'),
   (86865,86,'Valle del Guamuez'),
-  (76834,76,'Tulua'),
-  (66594,66,'Quinchia');
+  (76834,76,'Tuluá'),
+  (66594,66,'Quinchía');
 
 insert into homicidios values
   (0, 13458, '2013-11-20', 'MASCULINO', 54.0, 'ADULTOS', 1),
