@@ -2,6 +2,7 @@
 
 Este es el taller numero 1 de 
 Sebastián Vargas Otero - 202323722
-Pablo Sarmiento - 20232
+Pablo Sarmiento - 202321369
+Daniel Lizarazo - 202122825
 
 Para la clase de Taller de SQL ECON 1306
