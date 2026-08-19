@@ -1,0 +1,71 @@
+-- Ejercicio 1
+CREATE TABLE lector (
+  id int,
+  nombre varchar(20) not null,
+  apellido varchar(20) not null,
+  correo varchar(40) not null,
+  fecha_afiliacion date not null,
+
+  primary key (id)
+);
+
+CREATE TABLE libro (
+  id int,
+  titulo varchar(40) not null,
+  autor varchar(40) not null,
+  anio int not null,
+  precio_reposicion int not null,
+
+  primary key (id)
+); 
+
+INSERT INTO lector 
+  values 
+  (1,'Camila','Rojas','c.rojas@uniandes.edu.co','2024-02-12'),
+  (2,'Andrès','Beltràn','a.beltran@uniandes.edu.co','2024-02-12'),
+  (3,'Sofìa','Guerrero','sofiag@uniandes.edu.co','2024-02-15'),
+  (4,'Tomàs','Lozano','tlozano@uniandes.edu.co','2024-02-20')
+;
+
+INSERT INTO libro values 
+  (100,'Cien años de soledad','Garcìa Màrquez','1967','65000'),
+  (101,'El coronel no tiene quien le escriba','Garcìa Màrquez','1961','38000'),
+  (102,'La voràgine','Josè Eustacio Rivera','1924','42000')
+;
+
+
+-- Ejercicio 2
+
+CREATE table prestamo(
+  id int,
+  fecha_prestamo date not null,
+  id_lector int not null,
+  dias_plazo int not null,
+
+  primary key (id)
+);
+
+CREATE table detalle_prestamo(
+  id int not null,
+  id_prestamo int not null,
+  id_libro int not null,
+  fecha_devolucion date,
+
+  primary key(id)
+);
+
+
+insert into prestamo
+values
+  (500, '2024-03-01', 3, 15),
+  (501,'2024-03-01', 1, 7),
+  (502, '2024-03-04', 3, 15)
+;
+  
+insert into prestamo
+values
+  (900,500,100,'2024-03-14'),
+  (901,500,102, ),
+  (902,501,101,'2024-03-08'),
+  (903,502,100,)
+;
