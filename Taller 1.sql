@@ -99,6 +99,12 @@ select * from homicidios
 
 alter table homicidios
 drop column grupo_edad;
+select tc.table_name as tabla_hija, tc.constraint_name
+from information_schema.table_constraints tc
+join information_schema.constraint_column_usage ccu
+  on tc.constraint_name = ccu.constraint_name
+where tc.constraint_type = 'FOREIGN KEY'
+  and ccu.table_name = 'departamento';
 
 alter table departamento
 delete from departamento;
