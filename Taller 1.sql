@@ -93,6 +93,13 @@ select * from homicidios
 
 -- Actualizacion 
 
+UPDATE departamento
+SET nombre = TRANSLATE(nombre, 'áéíóúÁÉÍÓÚ', 'aeiouAEIOU')
+WHERE nombre ~ '[áéíóúÁÉÍÓÚ]';
+
+UPDATE municipio
+SET nombre = TRANSLATE(nombre, 'áéíóúÁÉÍÓÚ', 'aeiouAEIOU')
+WHERE nombre ~ '[áéíóúÁÉÍÓÚ]';
 
 
 -- Eliminacion 
